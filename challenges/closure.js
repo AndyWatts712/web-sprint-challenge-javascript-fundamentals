@@ -17,7 +17,7 @@ function myFunction() {
 myFunction();
 
 // Explanation: 
-"Because the variable internal is declared within the outer function, so it will always be accesible to nested functions. It has scope within myFunction."
+// "Because the variable internal is declared within the outer function, so it will always be accesible to nested functions. It has scope within myFunction."
 
 /* Task 2: Counter */
 
@@ -25,8 +25,9 @@ myFunction();
 
 let count = 0
 function summation(num) {
-  for (let i = 0; i < num; i++) {
-    return count++
-  }
+  for (let i = 1; i <= num; i++) {
+    count = count + i;
 }
-console.log(summation(5));
+return count
+}
+console.log(summation(4));
