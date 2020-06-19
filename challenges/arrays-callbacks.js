@@ -21,11 +21,11 @@ console.log("It works.");
 The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const displayNames = [];
-zooAnimals.forEach(function(){
-displayNames.push({zooAnimals.animal_name, zooAnimals.scientific_name})
-});
-console.log(displayNames);
+// const displayNames = [];
+// zooAnimals.forEach(function(animal_name){
+//   displayNames.push(zooAnimals.animal_name);
+// });
+// console.log(displayNames);
 
 
 /* Request 2: .map()
@@ -35,8 +35,8 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 */
 
 const lowCaseAnimalNames = [];
-zooAnimals.map(function() {
-  lowCaseAnimalNames = zooAnimals.toLowerCase();
+zooAnimals.map(function(item) {
+  lowCaseAnimalNames.push(item.animal_name.toLowerCase());
   return lowCaseAnimalNames;
 });
 console.log(lowCaseAnimalNames);
@@ -46,23 +46,23 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals =[];
-zooAnimals.filter(function(){
-  lowPopulationAnimals = zooAnimals.population < 5;
-  return lowPopulationAnimals;
-});
-console.log(lowPopulationAnimals);
+// const lowPopulationAnimals =[];
+// zooAnimals.filter(function(){
+//   lowPopulationAnimals = zooAnimals.population < 5;
+//   return lowPopulationAnimals;
+// });
+// console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
 
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-let populationTotal = 0;
-zooAnimals.reduce(function(accumulator, population){
-  populationTotal += accumulator + zooAnimals.population;
-});
-console.log(populationTotal);
+// let populationTotal = 0;
+// zooAnimals.reduce(function(accumulator, population){
+//   populationTotal += accumulator + zooAnimals.population;
+// });
+// console.log(populationTotal);
 
 
 // ==== Callbacks ====  
@@ -73,7 +73,7 @@ console.log(populationTotal);
   * The last parameter accepts a callback
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
-consume(a, b, cb){
+function consume(a, b, cb){
   return cb(a, b);
 }
 
@@ -82,15 +82,15 @@ consume(a, b, cb){
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
-add(a, b){
+function add(a, b){
   return a + b;
 }
 
-multiply(){
+function multiply(){
   return a* b;
 }
 
-greeting(fName, lName){
+function greeting(fName, lName){
   return `Hello ${fname} ${lName}, nice to meet you!`
 }
 
