@@ -71,22 +71,18 @@ console.log(populationTotal);
   * The last parameter accepts a callback
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
-function consume(a, b, cb){
-  return cb(a, b);
-}
+let consume = (a,b) => cb(a, b);
+
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
-function add(a, b){
-  return a + b;
-}
+let add = (a, b) => a + b;
 
-function multiply(a, b){
-  return a * b;
-}
+
+let multiply = (a, b) =>a * b;
 
 function greeting(fName, lName){
   return `Hello ${fName} ${lName}, nice to meet you!`
