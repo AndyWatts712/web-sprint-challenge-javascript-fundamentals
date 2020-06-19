@@ -14,6 +14,7 @@ const zooAnimals = [
   { animal_name: "Hawk-eagle, crowned", population: 10, scientific_name: "Spizaetus coronatus", state: "Florida" },
   { animal_name: "Australian pelican", population: 5, scientific_name: "Pelecanus conspicillatus", state: "West Virginia" },
 ];
+console.log("It works.");
 
 /* Request 1: .forEach()
 
@@ -21,7 +22,11 @@ The zoos want to display both the scientific name and the animal name in front o
 
 */
 const displayNames = [];
+zooAnimals.forEach(function(){
+displayNames.push({zooAnimals.animal_name, zooAnimals.scientific_name})
+});
 console.log(displayNames);
+
 
 /* Request 2: .map()
 
@@ -29,7 +34,11 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-const lowCaseAnimalNames
+const lowCaseAnimalNames = [];
+zooAnimals.map(function() {
+  lowCaseAnimalNames = zooAnimals.toLowerCase();
+  return lowCaseAnimalNames;
+});
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
@@ -37,7 +46,11 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals
+const lowPopulationAnimals =[];
+zooAnimals.filter(function(){
+  lowPopulationAnimals = zooAnimals.population < 5;
+  return lowPopulationAnimals;
+});
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
@@ -46,6 +59,9 @@ The zoos need to know their total animal population across the United States. Fi
 
 */
 let populationTotal = 0;
+zooAnimals.reduce(function(accumulator, population){
+  populationTotal += accumulator + zooAnimals.population;
+});
 console.log(populationTotal);
 
 
@@ -57,14 +73,26 @@ console.log(populationTotal);
   * The last parameter accepts a callback
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
-
+consume(a, b, cb){
+  return cb(a, b);
+}
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
+add(a, b){
+  return a + b;
+}
 
+multiply(){
+  return a* b;
+}
+
+greeting(fName, lName){
+  return `Hello ${fname} ${lName}, nice to meet you!`
+}
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
 // console.log(consume(2, 2, add)); // 4
